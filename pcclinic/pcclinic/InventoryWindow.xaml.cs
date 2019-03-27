@@ -1,4 +1,5 @@
-﻿using pcclinic.classes;
+﻿using LiteDB;
+using pcclinic.classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,11 +24,49 @@ namespace pcclinic
         public InventoryWindow()
         {
             InitializeComponent();
+            tblInventory.BeginningEdit += (s, e) => { e.Cancel = true; };
+            tblInventory.SelectionChanged += (s, e) => { var a = e.AddedItems; };
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            using (var db = new LiteDatabase("pcclinic.db"))
+            {
+                LiteCollection<Inventory> customersCollection = db.GetCollection<Inventory>("inventory");
+                //LiteCollection<Inventory> customerFirstName = customersCollection.Include(x => x.FirstName);
+
+                var query = customersCollection
+                   .Find(x => x.Id >= 1);
+
+                tblInventory.ItemsSource = query;
+            }
         }
 
         private void BtnReturn_Click(object sender, RoutedEventArgs e)
         {
             Functions.OpenWindow(this, new MainWindow());
+        }
+
+        private void btnInsertItem_Click(object sender, RoutedEventArgs e)
+        {
+            using (var db = new LiteDatabase("pcclinic.db"))
+            {
+                LiteCollection<Inventory> customersCollection = db.GetCollection<Inventory>("inventory");
+
+                Inventory inventory = new Inventory(itemName: txtItemName.Text.ToString(),
+                                                 itemDescription: txtItemDescription.Text.ToString(),
+                                                 itemQuantity: txtQuantity.Text.ToString(),
+                                                 itemValue: txtValue.Text.ToString());
+
+                customersCollection.Insert(inventory);
+
+                txtItemName.Text = string.Empty;
+                txtItemDescription.Text = string.Empty;
+                txtQuantity.Text = string.Empty;
+                txtValue.Text = string.Empty;
+            }
+            LoadData();
         }
     }
 }

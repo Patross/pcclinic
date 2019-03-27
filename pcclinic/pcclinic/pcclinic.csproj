@@ -122,7 +122,9 @@
     <Compile Include="BookingsWindow.xaml.cs">
       <DependentUpon>BookingsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="classes\Customer.cs" />
     <Compile Include="classes\Functions.cs" />
+    <Compile Include="classes\Inventory.cs" />
     <Compile Include="ClientsWindow.xaml.cs">
       <DependentUpon>ClientsWindow.xaml</DependentUpon>
     </Compile>
@@ -182,15 +184,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="pcclinic.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="pcclinic_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>pcclinic.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

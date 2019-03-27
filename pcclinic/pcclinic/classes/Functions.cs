@@ -14,8 +14,8 @@ namespace pcclinic.classes
             currentWindow.Close();
             Window window = newWindow;
             window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            window.Height = 350;
-            window.Width = 525;
+            window.Height = 400;
+            window.Width = 725;
             window.Show();
         }
     }

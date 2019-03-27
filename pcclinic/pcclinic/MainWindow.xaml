@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pcclinic"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525"
+        Title="MainWindow" Height="400" Width="725"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Name="btnOpenClients" Content="Clients" HorizontalAlignment="Left" Margin="53,68,0,0" VerticalAlignment="Top" Width="126" Height="39" Click="btnOpenClients_Click"/>
-        <Button Name="btnOpenInventory" Content="Inventory" HorizontalAlignment="Left" Margin="53,129,0,0" VerticalAlignment="Top" Width="126" Height="39" Click="btnOpenInventory_Click"/>
-        <Button Name="btnOpenBookings" Content="Bookings" HorizontalAlignment="Left" Margin="53,244,0,0" VerticalAlignment="Top" Width="126" Height="39" Click="btnOpenBookings_Click"/>
-        <Button Name="btnOpenJobs" Content="Jobs" HorizontalAlignment="Left" Margin="53,186,0,0" VerticalAlignment="Top" Width="126" Height="39" Click="btnOpenJobs_Click"/>
-        <Button Name="btnOpenCompareParts" Content="Compare parts" HorizontalAlignment="Left" Margin="306,125,0,0" VerticalAlignment="Top" Width="126" Height="39" Click="btnOpenCompareParts_Click"/>
-        <Button Name="btnOpenFinance" Content="Finance" HorizontalAlignment="Left" Margin="306,186,0,0" VerticalAlignment="Top" Width="126" Height="39" Click="btnOpenFinance_Click"/>
+        <Button Name="btnOpenClients" Content="Clients" HorizontalAlignment="Left" Margin="171,76,0,0" VerticalAlignment="Top" Width="126" Height="39" Click="btnOpenClients_Click"/>
+        <Button Name="btnOpenInventory" Content="Inventory" HorizontalAlignment="Left" Margin="171,137,0,0" VerticalAlignment="Top" Width="126" Height="39" Click="btnOpenInventory_Click"/>
+        <Button Name="btnOpenBookings" Content="Bookings" HorizontalAlignment="Left" Margin="171,252,0,0" VerticalAlignment="Top" Width="126" Height="39" Click="btnOpenBookings_Click"/>
+        <Button Name="btnOpenJobs" Content="Jobs" HorizontalAlignment="Left" Margin="171,194,0,0" VerticalAlignment="Top" Width="126" Height="39" Click="btnOpenJobs_Click"/>
+        <Button Name="btnOpenCompareParts" Content="Compare parts" HorizontalAlignment="Left" Margin="424,133,0,0" VerticalAlignment="Top" Width="126" Height="39" Click="btnOpenCompareParts_Click"/>
+        <Button Name="btnOpenFinance" Content="Finance" HorizontalAlignment="Left" Margin="424,194,0,0" VerticalAlignment="Top" Width="126" Height="39" Click="btnOpenFinance_Click"/>
     </Grid>
 </Window>

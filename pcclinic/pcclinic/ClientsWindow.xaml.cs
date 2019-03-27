@@ -25,19 +25,55 @@ namespace pcclinic
     /// </summary>
     public partial class ClientsWindow : Window
     {
+
         public ClientsWindow()
         {
             InitializeComponent();
-            using (var db = new LiteDatabase(@"pcclinic.db"))
+            tblClients.BeginningEdit += (s, e) => { e.Cancel = true; };
+            tblClients.SelectionChanged += (s, e) => { var a = e.AddedItems; };
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            using (var db = new LiteDatabase("pcclinic.db"))
             {
+                LiteCollection<Customer> customersCollection = db.GetCollection<Customer>("customers");
+                LiteCollection<Customer> customerFirstName = customersCollection.Include(x => x.FirstName);
 
+                var query = customersCollection
+                    .Include(x => x.FirstName)
+                   .Include(x => x.LastName)
+                   .Find(x => x.Id >= 1);
+
+                tblClients.ItemsSource = query;
             }
-
         }
 
         private void BtnReturn_Click(object sender, RoutedEventArgs e)
         {
             Functions.OpenWindow(this, new MainWindow());
+        }
+
+        private void btnInsertClient_Click(object sender, RoutedEventArgs e)
+        {
+            using (var db = new LiteDatabase("pcclinic.db"))
+            {
+                LiteCollection<Customer> customersCollection = db.GetCollection<Customer>("customers");
+
+                Customer customer = new Customer(firstName: txtFirstName.Text.ToString(),
+                                                 lastName: txtLastName.Text.ToString(),
+                                                 email: txtEmail.Text.ToString(),
+                                                 telephone: txtTelephone.Text.ToString());
+
+                customersCollection.Insert(customer);
+
+                txtFirstName.Text = string.Empty;
+                txtLastName.Text = string.Empty;
+                txtEmail.Text = string.Empty;
+                txtTelephone.Text = string.Empty;
+            }
+            LoadData();
         }
     }
 }
