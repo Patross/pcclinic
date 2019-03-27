@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pcclinic.classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,11 @@ namespace pcclinic
         public ComparePartsWindow()
         {
             InitializeComponent();
+        }
+
+        private void BtnReturn_Click(object sender, RoutedEventArgs e)
+        {
+            Functions.OpenWindow(this, new MainWindow());
         }
     }
 }

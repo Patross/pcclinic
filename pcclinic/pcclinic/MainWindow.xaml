@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pcclinic"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Button Name="btnOpenClients" Content="Clients" HorizontalAlignment="Left" Margin="53,68,0,0" VerticalAlignment="Top" Width="126" Height="39" Click="btnOpenClients_Click"/>
         <Button Name="btnOpenInventory" Content="Inventory" HorizontalAlignment="Left" Margin="53,129,0,0" VerticalAlignment="Top" Width="126" Height="39" Click="btnOpenInventory_Click"/>
