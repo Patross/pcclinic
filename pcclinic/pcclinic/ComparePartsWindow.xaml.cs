@@ -1,4 +1,5 @@
-﻿using pcclinic.classes;
+﻿using LiteDB;
+using pcclinic.classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,20 @@ namespace pcclinic
         public ComparePartsWindow()
         {
             InitializeComponent();
+
+            using (var db = new LiteDatabase("pcclinic.db"))
+            {
+                LiteCollection<Inventory> customersCollection = db.GetCollection<Inventory>("inventory");
+
+                var query = customersCollection
+                   .Find(x => x.Id >= 1);
+
+                foreach (var item in query)
+                {
+                    comboItem1.Items.Add(item.Id + ") " + item.ItemName);
+                    comboItem2.Items.Add(item.Id + ") " + item.ItemName);
+                }
+            }
         }
 
         private void BtnReturn_Click(object sender, RoutedEventArgs e)

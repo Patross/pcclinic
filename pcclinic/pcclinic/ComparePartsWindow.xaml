@@ -5,9 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pcclinic"
         mc:Ignorable="d"
-        Title="ComparePartsWindow" Height="300" Width="300">
+        Title="ComparePartsWindow" Height="300" Width="550.124">
     <Grid>
         <Button Name="btnReturn" Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="BtnReturn_Click"/>
+        <ComboBox Name="comboItem1" HorizontalAlignment="Left" Margin="104,62,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="comboItem2" HorizontalAlignment="Left" Margin="325,62,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="104,100,0,0" VerticalAlignment="Top"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="104,131,0,0" VerticalAlignment="Top"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="104,162,0,0" VerticalAlignment="Top"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="104,190,0,0" VerticalAlignment="Top"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="370,100,0,0" VerticalAlignment="Top"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="370,131,0,0" VerticalAlignment="Top"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="370,159,0,0" VerticalAlignment="Top"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="370,190,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
