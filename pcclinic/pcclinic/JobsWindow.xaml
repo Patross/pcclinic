@@ -17,7 +17,7 @@
         <Label Content="client Name" HorizontalAlignment="Left" Margin="150,95,0,0" VerticalAlignment="Top" Height="23"/>
         <Label Content="deadline" HorizontalAlignment="Left" Margin="150,123,0,0" VerticalAlignment="Top" Height="23"/>
         <Label Content="device type" HorizontalAlignment="Left" Margin="150,151,0,0" VerticalAlignment="Top" Height="23"/>
-        <Button Name="btnInsertJob" Content="Insert" HorizontalAlignment="Left" Margin="36,179,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="btnInsertJob" Content="Insert" HorizontalAlignment="Left" Margin="36,179,0,0" VerticalAlignment="Top" Width="75" Click="btnInsertJob_Click"/>
 
     </Grid>
 </Window>

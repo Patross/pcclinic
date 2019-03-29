@@ -32,12 +32,9 @@ namespace pcclinic
         {
             using (var db = new LiteDatabase("pcclinic.db"))
             {
-                LiteCollection<Customer> customersCollection = db.GetCollection<Customer>("customers");
-                LiteCollection<Customer> customerFirstName = customersCollection.Include(x => x.FirstName);
+                LiteCollection<Job> customersCollection = db.GetCollection<Job>("jobs");
 
                 var query = customersCollection
-                    .Include(x => x.FirstName)
-                   .Include(x => x.LastName)
                    .Find(x => x.Id >= 1);
 
                 tblJobs.ItemsSource = query;
@@ -47,6 +44,27 @@ namespace pcclinic
         private void BtnReturn_Click(object sender, RoutedEventArgs e)
         {
             Functions.OpenWindow(this, new MainWindow());
+        }
+
+        private void btnInsertJob_Click(object sender, RoutedEventArgs e)
+        {
+            using (var db = new LiteDatabase("pcclinic.db"))
+            {
+                LiteCollection<Job> customersCollection = db.GetCollection<Job>("jobs");
+
+                Job job = new Job(txtJobType.Text.ToString(),
+                                  txtClientId.Text.ToString(),
+                                  DateTime.Parse(txtDeadline.Text.ToString()),
+                                  txtDeviceType.Text.ToString());
+
+                customersCollection.Insert(job);
+
+                txtJobType.Text = string.Empty;
+                txtClientId.Text = string.Empty;
+                txtDeadline.Text = string.Empty;
+                txtDeviceType.Text = string.Empty;
+            }
+            LoadData();
         }
     }
 }
