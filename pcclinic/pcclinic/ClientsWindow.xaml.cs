@@ -36,7 +36,8 @@ namespace pcclinic
 
         private void LoadData()
         {
-            using (var db = new LiteDatabase("pcclinic.db"))
+            Logger logger = new Logger();
+            using (var db = new LiteDatabase("pcclinic.db", null, logger))
             {
                 LiteCollection<Customer> customersCollection = db.GetCollection<Customer>("customers");
                 LiteCollection<Customer> customerFirstName = customersCollection.Include(x => x.FirstName);
