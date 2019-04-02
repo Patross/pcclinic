@@ -49,7 +49,8 @@ namespace pcclinic
                 using (var db = new LiteDatabase("pcclinic.db"))
                 {
                     LiteCollection<Inventory> inventoryCollection = db.GetCollection<Inventory>("inventory");
-                    IEnumerable<Inventory> itemId = inventoryCollection.Find(x => x.Id == int.Parse(comboItem1.SelectedValue.ToString().ToCharArray()[0].ToString()));
+
+                    IEnumerable<Inventory> itemId = inventoryCollection.Find(x => x.Id == int.Parse(Functions.GetUntilOrEmpty(comboItem1.SelectedValue.ToString(), ")")));
                     foreach (var item in itemId)
                     {
 
