@@ -10,14 +10,14 @@
         <Button Name="btnReturn" Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="BtnReturn_Click"/>
         <ComboBox Name="comboItem1" HorizontalAlignment="Left" Margin="104,62,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox Name="comboItem2" HorizontalAlignment="Left" Margin="325,62,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="104,100,0,0" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="104,131,0,0" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="104,162,0,0" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="104,190,0,0" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="370,100,0,0" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="370,131,0,0" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="370,159,0,0" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="370,190,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblName1" Content="Label" HorizontalAlignment="Left" Margin="104,100,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblType1" Content="Label" HorizontalAlignment="Left" Margin="104,131,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblQuantity1" Content="Label" HorizontalAlignment="Left" Margin="104,162,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblValue1" Content="Label" HorizontalAlignment="Left" Margin="104,190,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblName2" Content="Label" HorizontalAlignment="Left" Margin="370,100,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblType2" Content="Label" HorizontalAlignment="Left" Margin="370,131,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblQuantity2" Content="Label" HorizontalAlignment="Left" Margin="370,159,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblValue2" Content="Label" HorizontalAlignment="Left" Margin="370,190,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
